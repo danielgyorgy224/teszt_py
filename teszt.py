@@ -4,6 +4,13 @@ def beolvas():
         for sor in fm:
             l.append(int(sor.strip()))
     return l
+  
+def paros_szamol(l):
+    db = 0
+    for s in l:
+        if s % 2 == 0:
+            db+=1
+    return db
 
 def osszead(l):
     sum=0
@@ -11,9 +18,11 @@ def osszead(l):
         sum+=szam
     return sum
 
-def kiir(s):
+def kiir(p, s):
+    print(f"A listában {p} db páros szám van.")
     print(s)
 
 adatok = beolvas()
 osszeg = osszead(adatok)
-kiir(osszeg)
+parosszamok = paros_szamol(adatok)
+kiir(parosszamok, osszeg)
